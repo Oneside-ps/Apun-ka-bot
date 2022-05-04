@@ -33,4 +33,4 @@ for i in range(len(cogs)):
 
 
 # run the client on the server
-client.run('OTY2MjU4OTQ4NDk3ODcwODY5.Yl_IxQ.b4gxPzJFt9YY-HcogzkH_tHX2RE')
+client.run('your_token')
