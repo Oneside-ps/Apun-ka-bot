@@ -1,6 +1,6 @@
 # Apun-ka-bot
-files you have to import  first--
-1) youtube_dl
-2) PyNaCl
 
-you have to import music.py in discord_bot.py to work propoerly and make sure you have installed FFmpeg
+To run 'discord_bot.py'  first install the requirements using 
+"pip install -r requirements.txt"
+
+use '?play <YOUTUBE_LINK>' to play any song or simply a video's audio. 
