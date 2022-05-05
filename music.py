@@ -1,6 +1,8 @@
 import discord 
 from discord.ext import commands
 import youtube_dl
+from youtubesearchpython import VideosSearch
+
 
 class music(commands.Cog):
     def init (self, client):
@@ -21,20 +23,29 @@ class music(commands.Cog):
         await ctx.voice_client.disconnect()
 
     @commands.command()
-    async def play(self,ctx,url):
-        #ctx.voice_client.stop()
+    async def play(self,ctx,VideoTitle):
+        
+        print(VideoTitle)
         await self.join(ctx)
         FFMPEG_OPTIONS = {'before_options':'','options':'-vn'}
         YDL_OPTIONS = {'format':"bestaudio"}
         vc = ctx.voice_client
+        videosSearch = VideosSearch(VideoTitle, limit = 1)
+        resultDict = videosSearch.result()
+        videoURL = resultDict['result'][0]['link']
+        if ctx.voice_client.is_playing():
+            print("SONG PLAYING and STOPPING IT")
+            ctx.voice_client.stop()
+            await self.join(ctx)
+
+
 
         with youtube_dl.YoutubeDL(YDL_OPTIONS) as ydl:
-            info = ydl.extract_info(url, download=False)
+            info = ydl.extract_info(videoURL, download=False)
             url2 = info['formats'][0]['url']
             source = await discord.FFmpegOpusAudio.from_probe(url2,
             **FFMPEG_OPTIONS)
             vc.play(source)
-
 
     @commands.command()
     async def pause(self,ctx):
