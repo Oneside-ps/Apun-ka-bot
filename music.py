@@ -1,7 +1,6 @@
 import discord 
 from discord.ext import commands
 import youtube_dl
-import pdb
 
 class music(commands.Cog):
     def init (self, client):

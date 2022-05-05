@@ -3,7 +3,6 @@ import discord
 from discord.ext import commands
 import music
 
-# client ( bot )
 client = discord.Client()
 
 @client.event
@@ -33,4 +32,4 @@ for i in range(len(cogs)):
 
 
 # run the client on the server
-client.run('your_token')
+client.run('your-token')
