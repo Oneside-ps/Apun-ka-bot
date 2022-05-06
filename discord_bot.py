@@ -3,23 +3,23 @@ import discord
 from discord.ext import commands
 import music
 
-client = discord.Client()
+# client = discord.Client()
 
-@client.event
-async def on_message(message):
-    if message.author == client.user:
-        return
+# @client.event
+# async def on_message(message):
+#     if message.author == client.user:
+#         return
 
-    responses= {
-        "bye":"huh finally ab shanti miljayegi ||| ja n ab bhi yhi pe pda hua hai",
-        "aur kya chl rha hai jindagi me":"apun bot hai yaar bs slave bn ke rh gya hu",
-        "tu hai kaun be":":sob: is oneside ka chela",
-        "hello":"Hello!",
-        "bhai bhai":"behen behen bol","help":"1)bye 2)aur kya chl rha hai jindagi me 3) tu kai kaun be 4)hello" 
-    }
+#     responses= {
+#         "bye":"huh finally ab shanti miljayegi ||| ja n ab bhi yhi pe pda hua hai",
+#         "aur kya chl rha hai jindagi me":"apun bot hai yaar bs slave bn ke rh gya hu",
+#         "tu hai kaun be":":sob: is oneside ka chela",
+#         "hello":"Hello!",
+#         "bhai bhai":"behen behen bol","help":"1)bye 2)aur kya chl rha hai jindagi me 3) tu kai kaun be 4)hello" 
+#     }
     
-    if message.content.lower() in responses:
-        await message.channel.send(responses[message.content.lower()])
+#     if message.content.lower() in responses:
+#         await message.channel.send(responses[message.content.lower()])
 
 
 cogs = [music]
@@ -32,4 +32,4 @@ for i in range(len(cogs)):
 
 
 # run the client on the server
-client.run('your-token')
+client.run('OTY2MjU4OTQ4NDk3ODcwODY5.GjdutE.JGs7UL73ZYoyZli3MdAlCLIx-JES5ZNPX2Erq0')
